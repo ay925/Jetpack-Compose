@@ -2,6 +2,7 @@ package com.visionary.jetpackcompose.jetpackcompose
 
 import android.content.Context
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,94 +45,101 @@ fun StateManagementExample() {
 //    var score by remember { mutableStateOf(0) }
     // remember savable saves the state during configuration
     var score by rememberSaveable { mutableIntStateOf(0) }
-    Text(
-        text = "Counter Application",
-        fontSize = 30.sp, modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 100.dp),
-        textAlign = TextAlign.Center,
-        fontWeight = FontWeight.Bold,
-        fontFamily = FontFamily.Serif
-    )
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Cyan))
+    {
         Text(
-            "Score : $score",
-            fontSize = 30.sp,
-            fontFamily = FontFamily.Cursive,
-            fontWeight = FontWeight.SemiBold
+            text = "Counter Application",
+            fontSize = 30.sp, modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 100.dp),
+            textAlign = TextAlign.Center,
+            fontWeight = FontWeight.Bold,
+            fontFamily = FontFamily.Serif,
+            color = Color.Black
         )
-        Spacer(modifier = Modifier.height(50.dp))
-        Row() {
-            Button(
-                onClick = { score++ },
-                shape = CircleShape,
-                modifier = Modifier.size(100.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White,
-                    contentColor = Color.Black
-                ),
-                contentPadding = PaddingValues(0.dp),
-                elevation = ButtonDefaults
-                    .buttonElevation(
-                        defaultElevation = 20.dp,
-                        pressedElevation = 40.dp
-                    )
-            ) {
-                Text("Increase")
-
-            }
-            Spacer(modifier = Modifier.width(16.dp))
-            Button(
-                onClick = {
-                    if (score > 0) score--
-                    else Toast.makeText(
-                        context,
-                        "Value can not be more decrees",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                },
-                shape = CircleShape,
-                modifier = Modifier.size(100.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White,
-                    contentColor = Color.Black
-                ),
-                contentPadding = PaddingValues(0.dp),
-                elevation = ButtonDefaults
-                    .buttonElevation(
-                        defaultElevation = 20.dp,
-                        pressedElevation = 40.dp
-                    )
-            ) {
-                Text("Decrease")
-            }
-        }
-        Button(
-            onClick = { score = 0 },
-            shape = CircleShape,
-            modifier = Modifier.size(100.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.White,
-                contentColor = Color.Black
-            ),
-            contentPadding = PaddingValues(0.dp),
-            elevation = ButtonDefaults
-                .buttonElevation(
-                    defaultElevation = 20.dp,
-                    pressedElevation = 40.dp
-                )
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Text("Reset")
+            Text(
+                "Score : $score",
+                fontSize = 30.sp,
+                fontFamily = FontFamily.Cursive,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(modifier = Modifier.height(100.dp))
+            Row() {
+                Button(
+                    onClick = { score++ },
+                    shape = CircleShape,
+                    modifier = Modifier.size(100.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.White,
+                        contentColor = Color.Black
+                    ),
+                    contentPadding = PaddingValues(0.dp),
+                    elevation = ButtonDefaults
+                        .buttonElevation(
+                            defaultElevation = 20.dp,
+                            pressedElevation = 40.dp
+                        )
+                ) {
+                    Text("Increase")
+
+                }
+                Spacer(modifier = Modifier.width(16.dp))
+                Button(
+                    onClick = {
+                        if (score > 0) score--
+                        else Toast.makeText(
+                            context,
+                            "Value can not be more decrees",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    },
+                    shape = CircleShape,
+                    modifier = Modifier.size(100.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.White,
+                        contentColor = Color.Black
+                    ),
+                    contentPadding = PaddingValues(0.dp),
+                    elevation = ButtonDefaults
+                        .buttonElevation(
+                            defaultElevation = 20.dp,
+                            pressedElevation = 40.dp
+                        )
+                ) {
+                    Text("Decrease")
+                }
+            }
+            Button(
+                onClick = { score = 0 },
+                shape = CircleShape,
+                modifier = Modifier.size(100.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.White,
+                    contentColor = Color.Black
+                ),
+                contentPadding = PaddingValues(0.dp),
+                elevation = ButtonDefaults
+                    .buttonElevation(
+                        defaultElevation = 20.dp,
+                        pressedElevation = 40.dp
+                    )
+            ) {
+                Text("Reset")
+            }
+
         }
 
     }
-
 }
+/*
 
 @Composable
 fun StateHostingParent(modifier: Modifier = Modifier) {
@@ -174,3 +182,4 @@ fun CounterChild(score: Int, increment: () -> Int, decrement: () -> Int) {
 
     }
 }
+ */

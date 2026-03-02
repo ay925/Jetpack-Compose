@@ -5,19 +5,19 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="ButtonExample">
+      <SelectionState runConfigName="LazyColumnExample">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="CardExample2">
+      <SelectionState runConfigName="LazyRowExample">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="StateManagementExample">
+      <SelectionState runConfigName="NestedLazyList">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="AlertDialogExample">
+      <SelectionState runConfigName="TypesOfItems">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="NavGraph">
+      <SelectionState runConfigName="MyScreenExample">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

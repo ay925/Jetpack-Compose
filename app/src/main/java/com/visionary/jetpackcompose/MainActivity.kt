@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.visionary.jetpackcompose.jetpackcompose.StateManagementExample
 import com.visionary.jetpackcompose.jetpackcompose.navigation.NavGraph
+import com.visionary.jetpackcompose.jetpackcompose.navigationBar.MyNavBar
+import com.visionary.jetpackcompose.jetpackcompose.navigationBar.NavBarGraph
 import com.visionary.jetpackcompose.ui.theme.JetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +23,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackComposeTheme {
-                NavGraph()
+                NavBarGraph()
             }
         }
     }

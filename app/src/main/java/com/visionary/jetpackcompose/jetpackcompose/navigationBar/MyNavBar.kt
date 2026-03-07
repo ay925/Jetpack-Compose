@@ -42,7 +42,7 @@ fun MyNavBar(navController: NavHostController,key: String) {
                 Icon(imageVector = items.icon,contentDescription = null)
             },
             label = { Text(items.title) },
-            alwaysShowLabel = false,
+            alwaysShowLabel = true,
             colors= NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.Blue,
                 selectedTextColor = Color.Blue,

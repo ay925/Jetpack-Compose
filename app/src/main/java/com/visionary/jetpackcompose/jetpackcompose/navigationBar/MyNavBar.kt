@@ -1,5 +1,12 @@
 package com.visionary.jetpackcompose.jetpackcompose.navigationBar
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
@@ -13,8 +20,11 @@ import androidx.compose.material3.NavigationBarItemColors
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
@@ -26,10 +36,13 @@ fun MyNavBar(navController: NavHostController,key: String) {
         NavItems("Profile", Icons.Default.Person, NavBarRoutes.Profile),
     )
     NavigationBar(
+        modifier = Modifier.fillMaxWidth().padding(20.dp).clip(shape = CircleShape).size(70.dp),
+
 
     ) { navItem.forEach {items ->
 
         NavigationBarItem(
+            modifier = Modifier.fillMaxSize().padding(top = 25.dp),
             onClick = {navController.navigate(items.routes){
                 popUpTo(navController.graph.startDestinationId){
                     saveState=true
@@ -46,7 +59,7 @@ fun MyNavBar(navController: NavHostController,key: String) {
             colors= NavigationBarItemDefaults.colors(
                 selectedIconColor = Color.Blue,
                 selectedTextColor = Color.Blue,
-                unselectedIconColor = Color.DarkGray
+                unselectedIconColor = Color.DarkGray,
 
             )
         )

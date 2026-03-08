@@ -16,10 +16,6 @@ fun NavBarGraph() {
     NavHost(
         navController=navController,
         startDestination = NavBarRoutes.Home,
-        enterTransition = { EnterTransition.None },
-        exitTransition = { ExitTransition.None },
-        popEnterTransition = { EnterTransition.None },
-        popExitTransition = { ExitTransition.None }
     ){
         composable<NavBarRoutes.Home> {
             NavHomeScreen(navController)

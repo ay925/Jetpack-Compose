@@ -8,13 +8,18 @@ import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.animation.shrinkVertically
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
@@ -30,8 +35,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.visionary.jetpackcompose.R
 import kotlinx.coroutines.delay
 
 @Preview(showSystemUi = true)
@@ -40,21 +48,28 @@ fun AnimatedVisibilityExample() {
     var showBox by remember { mutableStateOf(false) }
     Scaffold(
         floatingActionButton = {
-            FloatingActionButton(onClick = {showBox=!showBox}) {
-                Icon(imageVector = Icons.Default.Refresh,contentDescription = null)
+            FloatingActionButton(onClick = { showBox = !showBox }) {
+                Icon(imageVector = Icons.Default.Refresh, contentDescription = null)
             }
         }
-    ) {innerPadding->
-        Box(modifier = Modifier
-            .fillMaxSize()
-            .padding(innerPadding), contentAlignment = Alignment.Center)
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding), contentAlignment = Alignment.Center
+        )
         {
-            AnimatedVisibility (
+            AnimatedVisibility(
                 visible = showBox,
-                enter =fadeIn(animationSpec = tween(durationMillis = 1000))+expandHorizontally(),
-                exit = fadeOut(animationSpec = tween(durationMillis = 1000))+shrinkHorizontally()
-                ) {
-                Box(modifier = Modifier.size(100.dp).clip(CircleShape).background(color = Color.Red))
+                enter = scaleIn(animationSpec = tween(durationMillis = 600, delayMillis = 2000)),
+                exit = scaleOut(animationSpec = tween(durationMillis = 600, delayMillis = 2000))
+            ) {
+                Image(
+                    modifier = Modifier.height(200.dp).width(200.dp).clip(CircleShape),
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
+                )
             }
         }
     }

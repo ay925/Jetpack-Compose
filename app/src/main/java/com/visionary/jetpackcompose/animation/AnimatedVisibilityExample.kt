@@ -1,6 +1,19 @@
 package com.visionary.jetpackcompose.animation
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.Ease
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseInBack
+import androidx.compose.animation.core.EaseInBounce
+import androidx.compose.animation.core.EaseInCirc
+import androidx.compose.animation.core.EaseInElastic
+import androidx.compose.animation.core.EaseInExpo
+import androidx.compose.animation.core.EaseInOutBack
+import androidx.compose.animation.core.EaseInOutBounce
+import androidx.compose.animation.core.EaseOut
+import androidx.compose.animation.core.EaseOutBack
+import androidx.compose.animation.core.EaseOutBounce
+import androidx.compose.animation.core.EaseOutCirc
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
@@ -61,11 +74,26 @@ fun AnimatedVisibilityExample() {
         {
             AnimatedVisibility(
                 visible = showBox,
-                enter = scaleIn(animationSpec = tween(durationMillis = 600, delayMillis = 2000)),
-                exit = scaleOut(animationSpec = tween(durationMillis = 600, delayMillis = 2000))
+//                enter = scaleIn(animationSpec = tween(durationMillis = 600, easing = EaseInOutBounce)),
+//                exit = scaleOut(animationSpec = tween(durationMillis = 600,easing = Ease))
+                enter = scaleIn(
+                    animationSpec = spring(
+                        stiffness = Spring.StiffnessLow,
+                        dampingRatio = Spring.DampingRatioHighBouncy
+                    )
+                ),
+                exit = scaleOut(
+                    animationSpec = spring(
+                        stiffness = Spring.StiffnessLow,
+                        dampingRatio = Spring.DampingRatioNoBouncy
+                    )
+                )
             ) {
                 Image(
-                    modifier = Modifier.height(200.dp).width(200.dp).clip(CircleShape),
+                    modifier = Modifier
+                        .height(200.dp)
+                        .width(200.dp)
+                        .clip(CircleShape),
                     painter = painterResource(R.drawable.img),
                     contentDescription = null,
                     contentScale = ContentScale.Crop

@@ -1,6 +1,7 @@
 package com.visionary.jetpackcompose.animation
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.Crossfade
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.Ease
@@ -41,6 +42,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.FloatingActionButton
@@ -105,54 +107,85 @@ fun AnimatedVisibilityExample() {
 //                    contentDescription = null,
 //                    contentScale = ContentScale.Crop
 //                )
-            AnimatedVisibility(
-                visible = showBox,
-                enter = scaleIn(),
-                exit = scaleOut(),
-
-            ) {
-                Column {
-                    Image(
-                        modifier = Modifier
-                            .height(200.dp)
-                            .width(200.dp)
-                            .clip(CircleShape),
-//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-                        painter = painterResource(R.drawable.img),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop
+//            AnimatedVisibility(
+//                visible = showBox,
+//                enter = scaleIn(),
+//                exit = scaleOut(),
+//
+//            ) {
+//                Column {
+//                    Image(
+//                        modifier = Modifier
+//                            .height(200.dp)
+//                            .width(200.dp)
+//                            .clip(CircleShape),
+////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+//                        painter = painterResource(R.drawable.img),
+//                        contentDescription = null,
+//                        contentScale = ContentScale.Crop
+//                    )
+//                    Image(
+//                        modifier = Modifier
+//                            .height(200.dp)
+//                            .width(200.dp)
+//                            .clip(CircleShape)
+//                            .animateEnterExit(enter = fadeIn(animationSpec = tween(delayMillis = 2000)), exit = fadeOut(animationSpec = tween(durationMillis = 2000))),
+//                        painter = painterResource(R.drawable.img),
+//                        contentDescription = null,
+//                        contentScale = ContentScale.Crop
+//                    )
+//                    Image(
+//                        modifier = Modifier
+//                            .height(200.dp)
+//                            .width(200.dp)
+//                            .clip(CircleShape),
+////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+//                        painter = painterResource(R.drawable.img),
+//                        contentDescription = null,
+//                        contentScale = ContentScale.Crop
+//                    )
+//                    Image(
+//                        modifier = Modifier
+//                            .height(200.dp)
+//                            .width(200.dp)
+//                            .clip(CircleShape),
+////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+//                        painter = painterResource(R.drawable.img),
+//                        contentDescription = null,
+//                        contentScale = ContentScale.Crop
+//                    )
+//
+//                }
+//            }
+        }
+    }
+}
+@Composable
+fun CrossfadeExample() {
+    var showBox by remember { mutableStateOf(false) }
+    Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(onClick = { showBox = !showBox }) {
+                Icon(imageVector = Icons.Default.Refresh, contentDescription = null)
+            }
+        }
+    ) { innerPadding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding), contentAlignment = Alignment.Center
+        ) {
+            Crossfade(targetState = showBox) {visible->
+                if (visible) {
+                    Box(
+                        modifier = Modifier.size(100.dp)
+                            .background(color = Color.Red, shape = RoundedCornerShape(5.dp))
                     )
-                    Image(
-                        modifier = Modifier
-                            .height(200.dp)
-                            .width(200.dp)
-                            .clip(CircleShape)
-                            .animateEnterExit(enter = fadeIn(animationSpec = tween(delayMillis = 2000)), exit = fadeOut(animationSpec = tween(durationMillis = 2000))),
-                        painter = painterResource(R.drawable.img),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop
+                } else {
+                    Box(
+                        modifier = Modifier.size(100.dp)
+                            .background(color = Color.Green, shape = RoundedCornerShape(5.dp))
                     )
-                    Image(
-                        modifier = Modifier
-                            .height(200.dp)
-                            .width(200.dp)
-                            .clip(CircleShape),
-//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-                        painter = painterResource(R.drawable.img),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop
-                    )
-                    Image(
-                        modifier = Modifier
-                            .height(200.dp)
-                            .width(200.dp)
-                            .clip(CircleShape),
-//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-                        painter = painterResource(R.drawable.img),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop
-                    )
-
                 }
             }
         }

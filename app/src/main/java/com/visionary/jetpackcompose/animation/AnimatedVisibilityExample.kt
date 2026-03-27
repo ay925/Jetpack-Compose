@@ -177,15 +177,24 @@ fun CrossfadeExample() {
         ) {
             Crossfade(targetState = showBox) {visible->
                 if (visible) {
-                    Box(
-                        modifier = Modifier.size(100.dp)
-                            .background(color = Color.Red, shape = RoundedCornerShape(5.dp))
-                    )
-                } else {
-                    Box(
-                        modifier = Modifier.size(100.dp)
-                            .background(color = Color.Green, shape = RoundedCornerShape(5.dp))
-                    )
+                    Image(
+                    modifier = Modifier
+                        .height(200.dp)
+                        .width(200.dp)
+                        .clip(CircleShape),
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
+                )
+                } else {Image(
+                    modifier = Modifier
+                        .height(200.dp)
+                        .width(200.dp)
+                        .clip(CircleShape),
+                    painter = painterResource(R.drawable.img_1),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
+                )
                 }
             }
         }

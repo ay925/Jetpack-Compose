@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.visionary.jetpackcompose.animation.AnimatableExample
+import com.visionary.jetpackcompose.animation.AnimateAsStateExample
+import com.visionary.jetpackcompose.animation.AnimateExample
 import com.visionary.jetpackcompose.animation.AnimatedContentExample
 import com.visionary.jetpackcompose.ui.theme.JetpackComposeTheme
 
@@ -14,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackComposeTheme {
-                AnimatableExample()
+                AnimateAsStateExample()
             }
         }
     }

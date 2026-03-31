@@ -8,6 +8,7 @@ import com.visionary.jetpackcompose.animation.AnimatableExample
 import com.visionary.jetpackcompose.animation.AnimateAsStateExample
 import com.visionary.jetpackcompose.animation.AnimateExample
 import com.visionary.jetpackcompose.animation.AnimatedContentExample
+import com.visionary.jetpackcompose.animation.InfiniteTransition
 import com.visionary.jetpackcompose.ui.theme.JetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackComposeTheme {
-                AnimateAsStateExample()
+                InfiniteTransition()
             }
         }
     }

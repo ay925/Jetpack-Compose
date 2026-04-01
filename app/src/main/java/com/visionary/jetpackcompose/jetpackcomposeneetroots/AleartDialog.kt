@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.sp
 @Preview(showSystemUi = true)
 @Composable
 fun AlertDialogExample() {
-    var showDialog by remember { mutableStateOf(true) }
+    var showDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
     Column(
         modifier = Modifier.fillMaxSize(),

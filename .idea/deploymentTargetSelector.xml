@@ -6,9 +6,6 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="NavHomeScreen">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="NavBarGraph">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
@@ -20,6 +17,10 @@
       </SelectionState>
       <SelectionState runConfigName="AnimatedVisibilityExample">
         <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="DrawLineScreen">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
       </SelectionState>
     </selectionStates>
   </component>

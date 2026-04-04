@@ -91,7 +91,22 @@ class MainActivity : ComponentActivity() {
                             intent.putExtra(Intent.EXTRA_TEXT, "Hi I am a Anupam Yadav")
                             startActivity(Intent.createChooser(intent, "Share via"))
                         }) {
-                        Text("Send message")
+                        Text("Send text")
+                    }
+                    Button(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_SEND)
+
+                            intent.type = "image/*"   // VERY IMPORTANT
+
+                            intent.putExtra(Intent.EXTRA_TEXT, "Hi I am Anupam Yadav")
+                            intent.putExtra(Intent.EXTRA_STREAM, viewModel.uri)
+
+                            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+                            startActivity(Intent.createChooser(intent, "Share via"))
+                        }) {
+                        Text("Send image with text")
                     }
                 }
             }

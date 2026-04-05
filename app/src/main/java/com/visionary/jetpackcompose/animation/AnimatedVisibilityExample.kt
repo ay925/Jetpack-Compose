@@ -81,82 +81,86 @@ fun AnimatedVisibilityExample() {
                 .padding(innerPadding), contentAlignment = Alignment.Center
         )
         {
-//            AnimatedVisibility(
-//                visible = showBox,
-////                enter = scaleIn(animationSpec = tween(durationMillis = 600, easing = EaseInOutBounce)),
-////                exit = scaleOut(animationSpec = tween(durationMillis = 600,easing = Ease))
-//                enter = scaleIn(
-//                    animationSpec = spring(
-//                        stiffness = Spring.StiffnessLow,
-//                        dampingRatio = Spring.DampingRatioHighBouncy
-//                    )
-//                ),
-//                exit = scaleOut(
-//                    animationSpec = spring(
-//                        stiffness = Spring.StiffnessLow,
-//                        dampingRatio = Spring.DampingRatioNoBouncy
-//                    )
-//                )
-//            ) {
-//                Image(
-//                    modifier = Modifier
-//                        .height(200.dp)
-//                        .width(200.dp)
-//                        .clip(CircleShape),
-//                    painter = painterResource(R.drawable.img),
-//                    contentDescription = null,
-//                    contentScale = ContentScale.Crop
-//                )
-//            AnimatedVisibility(
-//                visible = showBox,
-//                enter = scaleIn(),
-//                exit = scaleOut(),
-//
-//            ) {
-//                Column {
-//                    Image(
-//                        modifier = Modifier
-//                            .height(200.dp)
-//                            .width(200.dp)
-//                            .clip(CircleShape),
-////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-//                        painter = painterResource(R.drawable.img),
-//                        contentDescription = null,
-//                        contentScale = ContentScale.Crop
-//                    )
-//                    Image(
-//                        modifier = Modifier
-//                            .height(200.dp)
-//                            .width(200.dp)
-//                            .clip(CircleShape)
-//                            .animateEnterExit(enter = fadeIn(animationSpec = tween(delayMillis = 2000)), exit = fadeOut(animationSpec = tween(durationMillis = 2000))),
-//                        painter = painterResource(R.drawable.img),
-//                        contentDescription = null,
-//                        contentScale = ContentScale.Crop
-//                    )
-//                    Image(
-//                        modifier = Modifier
-//                            .height(200.dp)
-//                            .width(200.dp)
-//                            .clip(CircleShape),
-////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-//                        painter = painterResource(R.drawable.img),
-//                        contentDescription = null,
-//                        contentScale = ContentScale.Crop
-//                    )
-//                    Image(
-//                        modifier = Modifier
-//                            .height(200.dp)
-//                            .width(200.dp)
-//                            .clip(CircleShape),
-////                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
-//                        painter = painterResource(R.drawable.img),
-//                        contentDescription = null,
-//                        contentScale = ContentScale.Crop
-//                    )
-//
-//                }
-//            }
+            AnimatedVisibility(
+                visible = showBox,
+//                enter = scaleIn(animationSpec = tween(durationMillis = 600, easing = EaseInOutBounce)),
+//                exit = scaleOut(animationSpec = tween(durationMillis = 600,easing = Ease))
+                enter = scaleIn(
+                    animationSpec = spring(
+                        stiffness = Spring.StiffnessLow,
+                        dampingRatio = Spring.DampingRatioHighBouncy
+                    )
+                ),
+                exit = scaleOut(
+                    animationSpec = spring(
+                        stiffness = Spring.StiffnessLow,
+                        dampingRatio = Spring.DampingRatioNoBouncy
+                    )
+                )
+            ) {
+                Image(
+                    modifier = Modifier
+                        .height(200.dp)
+                        .width(200.dp)
+                        .clip(CircleShape),
+                    painter = painterResource(R.drawable.img),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop
+                )
+                AnimatedVisibility(
+                    visible = showBox,
+                    enter = scaleIn(),
+                    exit = scaleOut(),
+
+                    ) {
+                    Column {
+                        Image(
+                            modifier = Modifier
+                                .height(200.dp)
+                                .width(200.dp)
+                                .clip(CircleShape),
+//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+                            painter = painterResource(R.drawable.img),
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop
+                        )
+                        Image(
+                            modifier = Modifier
+                                .height(200.dp)
+                                .width(200.dp)
+                                .clip(CircleShape)
+                                .animateEnterExit(
+                                    enter = fadeIn(animationSpec = tween(delayMillis = 2000)),
+                                    exit = fadeOut(animationSpec = tween(durationMillis = 2000))
+                                ),
+                            painter = painterResource(R.drawable.img),
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop
+                        )
+                        Image(
+                            modifier = Modifier
+                                .height(200.dp)
+                                .width(200.dp)
+                                .clip(CircleShape),
+//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+                            painter = painterResource(R.drawable.img),
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop
+                        )
+                        Image(
+                            modifier = Modifier
+                                .height(200.dp)
+                                .width(200.dp)
+                                .clip(CircleShape),
+//                            .animateEnterExit(enter = scaleIn(), exit = scaleOut()),
+                            painter = painterResource(R.drawable.img),
+                            contentDescription = null,
+                            contentScale = ContentScale.Crop
+                        )
+
+                    }
+                }
+            }
         }
     }
 }

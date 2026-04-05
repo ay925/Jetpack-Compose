@@ -6,19 +6,23 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="NavBarGraph">
+      <SelectionState runConfigName="DiagonalLineScreen">
         <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ToastSnackBar">
+      <SelectionState runConfigName="CenterLineScreen">
         <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="SnackBar">
+      <SelectionState runConfigName="VerticalCenterLineScreen">
         <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="AnimatedVisibilityExample">
+      <SelectionState runConfigName="CossLineScreen">
         <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="DrawLineScreen">
+      <SelectionState runConfigName="KotlinLogo">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

@@ -99,6 +99,18 @@ fun KotlinLogo() {
             end = Offset(x=canvasWidth/2-200,y=canvasHeight/2+250),
             strokeWidth = 10f,
         )
+        drawLine(
+            color = Color.Blue,
+            start = Offset(x=canvasWidth/2+200, y = canvasHeight/2-250),
+            end = Offset(x=canvasWidth/2-20,y=canvasHeight/2),
+            strokeWidth = 10f,
+        )
+        drawLine(
+            color = Color.Blue,
+            start = Offset(x=canvasWidth/2-20, y = canvasHeight/2),
+            end = Offset(x=canvasWidth/2+200,y=canvasHeight/2+250),
+            strokeWidth = 10f,
+        )
 
     }
 }

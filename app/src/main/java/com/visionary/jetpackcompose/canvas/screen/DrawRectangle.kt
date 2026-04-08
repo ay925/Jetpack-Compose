@@ -2,14 +2,17 @@ package com.visionary.jetpackcompose.canvas.screen
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
@@ -29,6 +32,23 @@ fun DrawRectangle() {
                     floatArrayOf(20f,10f),0f
                 )
             )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun DrawRoundRectangle() {
+    Canvas(modifier = Modifier.fillMaxSize().padding(horizontal = 50.dp))
+    {
+        val canvasWidth=size.width
+        val canvasHeight=size.height
+
+        drawRoundRect(
+            color = Color.Red,
+            size = Size(width = canvasWidth, height = canvasHeight/4),
+            topLeft = Offset(0f,canvasHeight/3),
+            cornerRadius = CornerRadius(16.dp.toPx())
         )
     }
 }

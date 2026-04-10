@@ -30,6 +30,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import coil3.compose.AsyncImage
 import com.visionary.jetpackcompose.jetpackcomposeneetroots.intents.ImageViewModel
 import com.visionary.jetpackcompose.jetpackcomposeneetroots.intents.SecondActivity
+import com.visionary.jetpackcompose.jetpackcomposeneetroots.sharedpref.SharedPreferences
 import com.visionary.jetpackcompose.ui.theme.JetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,12 +44,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackComposeTheme {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(
-                        text = "Main Activity",
-                        fontSize = 24.sp,
-                    )
-                }
+
+                SharedPreferences(this)
+//                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+//                    Text(
+//                        text = "Main Activity",
+//                        fontSize = 24.sp,
+//                    )
+//                }
             }
         }
     }
